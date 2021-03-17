@@ -84,13 +84,13 @@
   </Target>
 
   <PropertyGroup>
-    <MenuTemplate>../Gui/decompiler-menus.xml</MenuTemplate>
-    <GuiTransform>../Gui/cmdids.xslt</GuiTransform>
-    <GuiOutput>../Gui/CmdIds.cs</GuiOutput>
-    <WinFormsTransform>../UserInterfaces/WindowsForms/Forms/decompiler-menus.xslt</WinFormsTransform>
-    <WinFormsOutput>../UserInterfaces/WindowsForms/Forms/DecompilerMenus.cs</WinFormsOutput>
-    <CoreDll>../Core/bin/$(Configuration)/netstandard2.1</CoreDll>
-    <RekoHeaderFile>../Native/include/reko.h</RekoHeaderFile>
+    <MenuTemplate>$(ProjectDir)../Gui/decompiler-menus.xml</MenuTemplate>
+    <GuiTransform>$(ProjectDir)../Gui/cmdids.xslt</GuiTransform>
+    <GuiOutput>$(ProjectDir)../Gui/CmdIds.cs</GuiOutput>
+    <WinFormsTransform>$(ProjectDir)../UserInterfaces/WindowsForms/Forms/decompiler-menus.xslt</WinFormsTransform>
+    <WinFormsOutput>$(ProjectDir)../UserInterfaces/WindowsForms/Forms/DecompilerMenus.cs</WinFormsOutput>
+    <CoreDll>$(ProjectDir)../Core/bin/$(Configuration)/netstandard2.1</CoreDll>
+    <RekoHeaderFile>$(ProjectDir)../Native/include/reko.h</RekoHeaderFile>
   </PropertyGroup>
 
   <!-- Executes the xslt tool to generate the C# code for the reko menus in ~/src/Gui -->
