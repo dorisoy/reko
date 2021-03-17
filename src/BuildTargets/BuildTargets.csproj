@@ -90,7 +90,7 @@
     <WinFormsTransform>../UserInterfaces/WindowsForms/Forms/decompiler-menus.xslt</WinFormsTransform>
     <WinFormsOutput>../UserInterfaces/WindowsForms/Forms/DecompilerMenus.cs</WinFormsOutput>
     <CoreDll>../Core/bin/$(Configuration)/netstandard2.1</CoreDll>
-    <RekoHeaderFile>../Native/include</RekoHeaderFile>
+    <RekoHeaderFile>../Native/include/reko.h</RekoHeaderFile>
   </PropertyGroup>
 
   <!-- Executes the xslt tool to generate the C# code for the reko menus in ~/src/Gui -->
@@ -137,7 +137,7 @@
   <Target Name="run_hdrgen" DependsOnTargets="BuildTools"
       Inputs="$(CoreDll)"
       Outputs="$(RekoHeaderFile)">
-    <Message Importance="high" Text="Generating header $(RekoHeaderFile)" />
+    <Message Importance="high" Text="hdrgen -> $(RekoHeaderFile)" />
     <Exec Command="dotnet run --no-restore --no-build -p ../tools/hdrgen/hdrgen.csproj -- $(CoreDll) $(RekoHeaderFile)" />
   </Target>
 
